@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Vendor Management System.props" />
+</Project>

@@ -1,0 +1,66 @@
+<style>
+  .table-responsive {
+    max-height: 480px;
+    overflow-y: auto;
+    display: block;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+  }
+
+  .wrap {
+    word-wrap: break-word;
+  }
+
+  .myclass {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    /* border: 2px solid black; */
+    margin-top: 2vh;
+  }
+</style>
+
+<div class="container">
+  <h2>Currency List</h2>
+  <div class="container">
+    <a routerLink="/currencies/new" class="btn btn-primary mb-2">Create Currency</a><br>
+    <button class="btn btn-primary mb-3" (click)="exportToExcel()">Export to Excel</button>
+  </div>
+  <div class="table-responsive border border-dark">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Currency Id</th>
+          <th>Currency Code</th>
+          <th>Currency Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let currency of currencies">
+          <td class="wrap">{{ currency.currencyId }}</td>
+          <td class="wrap">{{ currency.currencyCode }}</td>
+          <td class="wrap">{{ currency.currencyName }}</td>
+          <td>
+            <button (click)="UpdateCurrency(currency.currencyCode)" class="btn btn-warning btn-sm">Edit</button>
+            <button (click)="deleteCurrency(currency.currencyCode)" class="btn btn-danger btn-sm ms-1">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="myclass">
+    <p>Total currencies: {{currencies.length}}</p>
+  </div>
+</div>

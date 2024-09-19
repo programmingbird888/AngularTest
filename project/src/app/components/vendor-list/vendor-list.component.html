@@ -1,0 +1,72 @@
+<style>
+  .table-responsive {
+    max-height: 480px;
+    overflow-y: auto;
+    display: block;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+  }
+
+  .wrap {
+    word-wrap: break-word;
+  }
+
+  .myclass {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    /* border: 2px solid black; */
+    margin-top: 2vh;
+  }
+</style>
+
+<div class="container">
+  <h2>Vendor List</h2>
+  <div class="container">
+    <a routerLink="vendors/new" class="btn btn-primary mb-2">Create Vendor</a><br>
+    <button class="btn btn-primary mb-3" (click)="exportToExcel()">Export to Excel</button>
+  </div>
+  <div class="table-responsive border border-dark">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vendor of vendors">
+          <td class="wrap">{{ vendor.vendorId }}</td>
+          <td class="wrap">{{ vendor.vendorCode }}</td>
+          <td class="wrap">{{ vendor.vendorLongName }}</td>
+          <td class="wrap">{{ vendor.vendorEmail }}</td>
+          <td class="wrap">{{ vendor.vendorPhoneNumber }}</td>
+          <td class="wrap">{{ vendor.isActive ? "Active" : "Inactive" }}</td>
+          <td>
+            <button (click)="UpdateVendor(vendor.vendorCode)" class="btn btn-warning btn-sm">Edit</button>
+            <button (click)="deleteVendor(vendor.vendorCode)" class="btn btn-danger btn-sm ms-1">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="myclass">
+    <p>Total vendors: {{vendors.length}}</p>
+  </div>
+</div>

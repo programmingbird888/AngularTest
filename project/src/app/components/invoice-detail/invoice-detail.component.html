@@ -1,0 +1,48 @@
+<div class="container">
+  <h2>{{ isEdit ? 'Edit Invoice' : 'Add Invoice' }}</h2>
+  <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label>Invoice Number</label>
+      <input formControlName="invoiceNumber" class="form-control" />
+      <div *ngIf="invoiceForm.get('invoiceNumber')?.invalid && invoiceForm.get('invoiceNumber')?.touched"
+        class="text-danger">
+        Invoice Number is required.
+      </div>
+      <div class="mb-3">
+        <label for="code">Vendor Code</label>
+        <select formControlName="vendorCode" class="form-control" id="code">
+          <option *ngFor="let vendor of vendorlist" [value]="vendor.vendorCode">{{ vendor.vendorCode }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label>Invoice Amount</label>
+      <input formControlName="invoiceAmount" type="number" class="form-control" />
+      <div *ngIf="invoiceForm.get('invoiceAmount')?.invalid && invoiceForm.get('invoiceAmount')?.touched"
+        class="text-danger">
+        Invoice Amount is required and must be a positive number.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="currencycode">Invoice Currency Code</label>
+      <select formControlName="invoiceCurrencyCode" class="form-control" id="currencycode">
+        <option *ngFor="let currency of currencylist" [value]="currency.currencyCode">{{ currency.currencyCode }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="ddate">Invoice Due Date</label>
+      <input formControlName="invoiceDueDate" type="date" class="form-control" id="ddate" />
+      <div *ngIf="invoiceForm.get('invoiceDueDate')?.invalid && invoiceForm.get('invoiceDueDate')?.touched"
+        class="text-danger">
+        Invoice Due Date is required.
+      </div>
+    </div>
+    <div class="form-check">
+      <input formControlName="isActive" type="checkbox" class="form-check-input" />
+      <label class="form-check-label">Is Active</label>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Save</button>&nbsp;
+    <a routerLink="/invoices" class="btn btn-secondary mt-2">Cancel</a>
+  </form>
+</div>

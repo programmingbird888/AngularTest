@@ -1,0 +1,76 @@
+<style>
+  .table-responsive {
+    max-height: 480px;
+    overflow-y: auto;
+    display: block;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+  }
+
+  .wrap {
+    word-wrap: break-word;
+  }
+
+  .myclass {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    /* border: 2px solid black; */
+    margin-top: 2vh;
+  }
+</style>
+
+<div class="container">
+  <h2>Invoice List</h2>
+  <div class="container">
+    <a routerLink="/invoices/new" class="btn btn-primary mb-2">Create Invoice</a><br>
+    <button class="btn btn-primary mb-3" (click)="exportToExcel()">Export to Excel</button>
+  </div>
+  <div class="table-responsive border border-dark">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Number</th>
+          <th>Amount</th>
+          <th>Currency</th>
+          <th>Received</th>
+          <th>Due</th>
+          <th>Status</th>
+          <th>Vendor</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of invoices">
+          <td class="wrap">{{ invoice.invoiceId }}</td>
+          <td class="wrap">{{ invoice.invoiceNumber }}</td>
+          <td class="wrap">{{ invoice.invoiceAmount }}</td>
+          <td class="wrap">{{ invoice.invoiceCurrencyCode }}</td>
+          <td class="wrap">{{ invoice.invoiceReceivedDate | date }}</td>
+          <td class="wrap">{{ invoice.invoiceDueDate | date }}</td>
+          <td class="wrap">{{ invoice.isActive ? "Active" : "Inactive" }}</td>
+          <td class="wrap">{{ invoice.vendorCode }}</td>
+          <td>
+            <button (click)="UpdateInvoice(invoice.invoiceNumber)" class="btn btn-warning btn-sm">Edit</button>
+            <button (click)="deleteInvoice(invoice.invoiceNumber)" class="btn btn-danger btn-sm ms-1">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="myclass">
+    <p>Total invoices: {{invoices.length}}</p>
+  </div>
+</div>

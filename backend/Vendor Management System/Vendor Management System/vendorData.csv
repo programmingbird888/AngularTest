@@ -1,0 +1,12 @@
+VendorId, VendorLongName, VendorCode, VendorPhoneNumber, VendorEmail, VendorCreatedOn, IsActive
+1,Sandip,abcdefgh,9876543212,abc@gmail.com,09-09-2024 11:46:06,True
+2,Rajesh,ijklmnop,9876543213,rajesh@gmail.com,09-09-2024 11:46:06,True
+3,Anita,qrstuvwx,9876543214,anita@gmail.com,09-09-2024 11:46:06,True
+4,Vikram,yzabcdef,9876543215,vikram@gmail.com,09-09-2024 11:46:06,True
+5,Priya,ghijklmn,9876543216,priya@gmail.com,09-09-2024 11:46:06,True
+6,Amit,opqrstuv,9876543217,amit@gmail.com,09-09-2024 11:46:06,True
+7,Neha,wxyzabcd,9876543218,neha@gmail.com,09-09-2024 11:46:06,True
+8,Suresh,efghijkl,9876543219,suresh@gmail.com,09-09-2024 11:46:06,True
+9,Kavita,mnopqrst,9876543220,kavita@gmail.com,09-09-2024 11:46:06,True
+10,Rohit,uvwxyzab,9876543221,rohit@gmail.com,09-09-2024 11:46:06,True
+11,Meena,cdefghij,9876543222,meena@gmail.com,09-09-2024 11:46:06,True

@@ -1,0 +1,291 @@
+[
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
+    "Method": "GetCurrencyByCode",
+    "RelativePath": "api/currency/{code}currencybycode",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
+    "Method": "DeleteCurrencyList",
+    "RelativePath": "api/currency/{code}deletecurrency",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
+    "Method": "PutUpdateCurrencyList",
+    "RelativePath": "api/currency/{code}updatecurrency",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "context",
+        "Type": "Vendor_Management_System.Currency",
+        "IsRequired": true
+      },
+      {
+        "Name": "code",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
+    "Method": "PostCreateCurrencyList",
+    "RelativePath": "api/currency/createcurrency",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "currency",
+        "Type": "Vendor_Management_System.Currency",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
+    "Method": "GetCurrencyList",
+    "RelativePath": "api/currency/currencylist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "DeleteInvoiceList",
+    "RelativePath": "api/invoice/{invoiceNumber}deleteinvoice",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "PutUpdateInvoiceList",
+    "RelativePath": "api/invoice/{invoiceNumber}updateinvoice",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "context",
+        "Type": "Vendor_Management_System.Invoice",
+        "IsRequired": true
+      },
+      {
+        "Name": "invoiceNumber",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "GetInvoiceByNumber",
+    "RelativePath": "api/invoice/{number}invoicebynumber",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "number",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "PostCreateInvoiceList",
+    "RelativePath": "api/invoice/createinvoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoice",
+        "Type": "Vendor_Management_System.Invoice",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "ExportToCSV",
+    "RelativePath": "api/invoice/exporttocsv",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "GetInvoiceByVendorId",
+    "RelativePath": "api/invoice/invoicebyvendorid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "GetInvoiceCountByVendorCode",
+    "RelativePath": "api/invoice/invoicecountbyvendorid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "GetInvoiceList",
+    "RelativePath": "api/invoice/invoicelist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.VendorController",
+    "Method": "DeleteVendorList",
+    "RelativePath": "api/vendor/{code}deletevendor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.VendorController",
+    "Method": "GetVendorByCode",
+    "RelativePath": "api/vendor/{code}vendorbycode",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.VendorController",
+    "Method": "PutUpdateVendorList",
+    "RelativePath": "api/vendor/{vendorCode}updatevendor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "context",
+        "Type": "Vendor_Management_System.Vendor",
+        "IsRequired": true
+      },
+      {
+        "Name": "vendorCode",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.VendorController",
+    "Method": "PostCreateVendorList",
+    "RelativePath": "api/vendor/createvendor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vendor",
+        "Type": "Vendor_Management_System.Vendor",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.VendorController",
+    "Method": "ExportToCSV",
+    "RelativePath": "api/vendor/ExporttoCSV",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.VendorController",
+    "Method": "GetVendorList",
+    "RelativePath": "api/vendor/vendorlist",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
