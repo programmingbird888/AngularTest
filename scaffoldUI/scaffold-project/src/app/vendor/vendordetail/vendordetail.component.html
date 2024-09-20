@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>{{ isEdit ? 'Edit Vendor' : 'Add Vendor' }}</h2>
+    <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label>Vendor Code</label>
+            <input formControlName="vendorCode" class="form-control" />
+            <div *ngIf="vendorForm.get('vendorCode')?.invalid && vendorForm.get('vendorCode')?.touched"
+                class="text-danger">
+                Vendor Code is required.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label>Vendor Long Name</label>
+            <input formControlName="vendorLongName" class="form-control" />
+            <div *ngIf="vendorForm.get('vendorLongName')?.invalid && vendorForm.get('vendorLongName')?.touched"
+                class="text-danger">
+                Enter Name.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label>Phone Number</label>
+            <input formControlName="vendorPhoneNumber" class="form-control" />
+            <div *ngIf="vendorForm.get('vendorPhoneNumber')?.invalid && vendorForm.get('vendorPhoneNumber')?.touched"
+                class="text-danger">
+                Enter a Phone Number.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input formControlName="vendorEmail" type="email" class="form-control" />
+            <div *ngIf="vendorForm.get('vendorEmail')?.invalid && vendorForm.get('vendorEmail')?.touched"
+                class="text-danger">
+                Enter a valid email.
+            </div>
+        </div>
+        <div class="form-check">
+            <input formControlName="isActive" type="checkbox" class="form-check-input" />
+            <label class="form-check-label">Is Active</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Save</button>&nbsp;
+        <a routerLink="/vendor" class="btn btn-secondary mt-2">Cancel</a>
+    </form>
+</div>

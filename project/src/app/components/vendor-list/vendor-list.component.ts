@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '../../services/vendor.service';
-import { Vendor } from '../../models/vendor.model';
 import * as XLSX from 'xlsx';
 import { Router } from '@angular/router';
+import { Vendor } from 'src/app/models/vendor.model';
 
 @Component({
   selector: 'app-vendor-list',
@@ -32,7 +32,7 @@ export class VendorListComponent implements OnInit {
   }
 
   UpdateVendor(vendorCode:string){
-    this.routes.navigate([`vendors/edit/${vendorCode}`]);
+    this.routes.navigate([`/vendor/vendors/edit/${vendorCode}`]);
   }
 
   exportToExcel(): void {

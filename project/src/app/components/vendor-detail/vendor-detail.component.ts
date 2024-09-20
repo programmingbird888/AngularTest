@@ -18,7 +18,7 @@ export class VendorDetailComponent implements OnInit {
     private vendorService: VendorService,
     private router: Router,
     private route: ActivatedRoute
-  ) {
+  ) { 
     this.vendorForm = this.fb.group({
       vendorCode: [ '', Validators.required],
       vendorLongName: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
@@ -49,13 +49,13 @@ export class VendorDetailComponent implements OnInit {
       const vendor: Vendor = this.vendorForm.value;
       if (this.isEdit) {
         this.vendorService.updateVendor(this.vendorCode!, vendor).subscribe(() => {
-          this.router.navigate(['modules/vendors']);
+          this.router.navigate(['/vendor/vendors']);
         },err=>{
           alert(err.error);
         });
       } else {
         this.vendorService.addVendor(vendor).subscribe(() => {
-          this.router.navigate(['modules/vendors']);
+          this.router.navigate(['/vendor/vendors']);
         },err=>{
           alert(err.error);
         });

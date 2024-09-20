@@ -34,7 +34,7 @@
 <div class="container">
   <h2>Vendor List</h2>
   <div class="container">
-    <a routerLink="vendors/new" class="btn btn-primary mb-2">Create Vendor</a><br>
+    <a routerLink="/vendor/vendors/new" class="btn btn-primary mb-2">Create Vendor</a><br>
     <button class="btn btn-primary mb-3" (click)="exportToExcel()">Export to Excel</button>
   </div>
   <div class="table-responsive border border-dark">
@@ -70,3 +70,5 @@
     <p>Total vendors: {{vendors.length}}</p>
   </div>
 </div>
+
+<router-outlet></router-outlet>

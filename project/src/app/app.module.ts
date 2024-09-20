@@ -19,8 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     // VendorDetailComponent,
     CurrencyListComponent,
     CurrencyDetailComponent,
-    // InvoiceListComponent,
-    // InvoiceDetailComponent
+    InvoiceListComponent,
+    InvoiceDetailComponent
   ],
   imports: [
     BrowserModule,

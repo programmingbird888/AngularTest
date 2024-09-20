@@ -1,0 +1,109 @@
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\appsettings.json
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.exe
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.deps.json
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.runtimeconfig.json
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.pdb
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.csproj.AssemblyReference.cache
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.AssemblyInfoInputs.cache
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.AssemblyInfo.cs
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.csproj.CoreCompileInputs.cache
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets\msbuild.Vendor Management System.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets\msbuild.build.Vendor Management System.props
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Vendor Management System.props
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Vendor Management System.props
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\scopedcss\bundle\Vendor Management System.styles.css
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor M.B758970C.Up2Date
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\refint\Vendor Management System.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.pdb
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.genruntimeconfig.cache
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\obj\Debug\net8.0\ref\Vendor Management System.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Web.Cors.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Reactive.dll
+C:\Users\SandipSingh\Desktop\Task 2\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Reactive.Linq.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\appsettings.json
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.exe
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.deps.json
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.runtimeconfig.json
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Vendor Management System.pdb
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Web.Cors.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Reactive.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Reactive.Linq.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.csproj.AssemblyReference.cache
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.AssemblyInfoInputs.cache
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.AssemblyInfo.cs
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.csproj.CoreCompileInputs.cache
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.sourcelink.json
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets\msbuild.Vendor Management System.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets\msbuild.build.Vendor Management System.props
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Vendor Management System.props
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Vendor Management System.props
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\scopedcss\bundle\Vendor Management System.styles.css
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor M.B758970C.Up2Date
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\refint\Vendor Management System.dll
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.pdb
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\Vendor Management System.genruntimeconfig.cache
+C:\Users\SandipSingh\Desktop\vms-test-angular\api\Vendor Management System\Vendor Management System\obj\Debug\net8.0\ref\Vendor Management System.dll
