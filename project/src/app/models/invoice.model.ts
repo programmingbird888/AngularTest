@@ -1,11 +1,11 @@
 export interface Invoice {
-    invoiceId: string;
+    invoiceId: number;
     invoiceNumber: string;
     invoiceAmount: number;
-    invoiceCurrencyCode: string;
+    invoiceCurrencyId: number;
     invoiceReceivedDate: Date;
     invoiceDueDate: Date;
     isActive: boolean;
-    vendorCode: string;
+    vendorId: number;
   }
   

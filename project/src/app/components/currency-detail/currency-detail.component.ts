@@ -11,7 +11,7 @@ import { Currency } from '../../models/currency.model';
 export class CurrencyDetailComponent implements OnInit {
   currencyForm: FormGroup;
   isEdit: boolean = false;
-  currencyCode: string | null = null;
+  currencyId: number = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -27,16 +27,16 @@ export class CurrencyDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.currencyCode = params['currencyCode'];
-      if (this.currencyCode) {
-        this.loadCurrency(this.currencyCode);
+      this.currencyId = params['currencyId'];
+      if (this.currencyId) {
+        this.loadCurrency(this.currencyId);
         this.isEdit = true;
       }
     });
   }
 
-  loadCurrency(currencyCode: string): void {
-    this.currencyService.getCurrency(currencyCode).subscribe(currency => {
+  loadCurrency(currencyId : number): void {
+    this.currencyService.getCurrency(currencyId).subscribe(currency => {
       this.currencyForm.patchValue(currency);
     });
   }
@@ -45,14 +45,17 @@ export class CurrencyDetailComponent implements OnInit {
     if (this.currencyForm.valid) {
       const currency: Currency = this.currencyForm.value;
       if (this.isEdit) {
-        this.currencyService.updateCurrency(this.currencyCode!, currency).subscribe(() => {
-          this.router.navigate(['/currencies']);
+        currency.currencyId = this.currencyId;
+        this.currencyService.updateCurrency(this.currencyId!, currency).subscribe(() => {
+          alert("Currency edited.");
+          this.router.navigate(['/currency/currencies']);
         },err=>{
           alert(err.error);
         });
       } else {
         this.currencyService.addCurrency(currency).subscribe(() => {
-          this.router.navigate(['/currencies']);
+          alert("Currency added.");
+          this.router.navigate(['/currency/currencies']);
         },err=>{
           alert(err.error);
         });

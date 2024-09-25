@@ -15,7 +15,7 @@ import { Vendor } from 'src/app/models/vendor.model';
 export class InvoiceDetailComponent implements OnInit {
   invoiceForm: FormGroup;
   isEdit: boolean = false;
-  invoiceNumber: string | null = null;
+  invoiceId: number = 0;
   vendorlist: Vendor[] = [];
   currencylist: Currency[] = [];
 
@@ -30,18 +30,18 @@ export class InvoiceDetailComponent implements OnInit {
     this.invoiceForm = this.fb.group({
       invoiceNumber: ['', Validators.required],
       invoiceAmount: ['', [Validators.required, Validators.min(0)]],
-      invoiceCurrencyCode: ['', Validators.required],
+      invoiceCurrencyId: ['', Validators.required],
       invoiceDueDate: ['', Validators.required],
-      vendorCode: ['', Validators.required],
+      vendorId: ['', Validators.required],
       isActive: [true]
     });
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.invoiceNumber = params['invoiceNumber'];
-      if (this.invoiceNumber) {
-        this.loadInvoice(this.invoiceNumber);
+      this.invoiceId = params['invoiceId'];
+      if (this.invoiceId) {
+        this.loadInvoice(this.invoiceId);
         this.isEdit = true;
       }
     });
@@ -49,8 +49,8 @@ export class InvoiceDetailComponent implements OnInit {
     this.currencyService.getCurrencies().subscribe(v=>this.currencylist = v);
   }
 
-  loadInvoice(invoiceNumber: string): void {
-    this.invoiceService.getInvoice(invoiceNumber).subscribe(invoice => {
+  loadInvoice(invoiceId: number): void {
+    this.invoiceService.getInvoice(invoiceId).subscribe(invoice => {
       this.invoiceForm.patchValue(invoice);
     });
   }
@@ -58,16 +58,21 @@ export class InvoiceDetailComponent implements OnInit {
   onSubmit(): void {
     if (this.invoiceForm.valid) {
       const invoice: Invoice = this.invoiceForm.value;
+
       if (this.isEdit) {
-        this.invoiceService.updateInvoice(this.invoiceNumber!, invoice).subscribe(() => {
-          this.router.navigate(['/invoices']);
+        invoice.invoiceId = this.invoiceId;
+        this.invoiceService.updateInvoice(this.invoiceId, invoice).subscribe(() => {
+          alert("Invoice edited.");
+          this.router.navigate(['/invoice/invoices']);
         },err=>{
           alert(err.error);
         });
       } else {
         this.invoiceService.addInvoice(invoice).subscribe(() => {
-          this.router.navigate(['/invoices']);
-        },err=>{
+          alert("Invoice added.");
+          this.router.navigate(['/invoice/invoices']);
+        }, err => {
+          console.log(err);
           alert(err.error);
         });
       }

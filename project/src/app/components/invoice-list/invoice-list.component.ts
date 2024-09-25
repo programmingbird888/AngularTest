@@ -3,6 +3,10 @@ import { InvoiceService } from '../../services/invoice.service';
 import { Invoice } from '../../models/invoice.model';
 import * as XLSX from 'xlsx';
 import { Router } from '@angular/router';
+import { Vendor } from 'src/app/models/vendor.model';
+import { Currency } from '../../models/currency.model';
+import { VendorService } from 'src/app/services/vendor.service';
+import { CurrencyService } from 'src/app/services/currency.service';
 
 @Component({
   selector: 'app-invoice-list',
@@ -10,27 +14,47 @@ import { Router } from '@angular/router';
 })
 export class InvoiceListComponent implements OnInit {
   invoices: Invoice[] = [];
+  vendor: Vendor[] = [];
+  currency: Currency[] = [];
+  currencyId: number = 0;
+  vendorId:number = 0
 
-  constructor(private invoiceService: InvoiceService, private routes:Router) {}
+  constructor(private invoiceService: InvoiceService, private routes:Router, private vendorService: VendorService, private currencyService: CurrencyService) {}
 
   ngOnInit(): void {
     this.loadInvoices();
+
+    this.vendorService.getVendors().subscribe(data => {
+      this.vendor = data;
+    }, err => {
+      alert(err.error);
+    });
+
+    this.currencyService.getCurrencies().subscribe(data => {
+      this.currency = data;
+    }, err => {
+      alert(err);
+    });
   }
 
   loadInvoices(): void {
-    this.invoiceService.getInvoices().subscribe(invoices => {
-      this.invoices = invoices;
+    this.invoiceService.getInvoices(this.currencyId, this.vendorId).subscribe((get: Invoice[]) => {
+      this.invoices = get;
     });
   }
 
-  deleteInvoice(invoiceNumber: string): void {
-    this.invoiceService.deleteInvoice(invoiceNumber).subscribe(() => {
-      this.loadInvoices();
-    });
+  deleteInvoice(invoiceId: number): void {
+    const confirmDelete = confirm("Are you sure you want to delete!");
+    if (confirmDelete) {
+      this.invoiceService.deleteInvoice(invoiceId).subscribe(() => {
+        alert("Invoice Deleted.")
+        this.loadInvoices();
+      });
+    }
   }
 
-  UpdateInvoice(invoiceNumber:string){
-    this.routes.navigate([`invoices/edit/${invoiceNumber}`]);
+  UpdateInvoice(invoiceId: number){
+    this.routes.navigate([`invoice/invoices/edit/${invoiceId}`]);
   }
 
   exportToExcel(): void {
@@ -40,5 +64,32 @@ export class InvoiceListComponent implements OnInit {
     XLSX.writeFile(wb, 'invoices.xlsx');
   }
 
+  getCurrencyCode(currencyId: number): string {
+    var curr = this.currency.find(c => c.currencyId == currencyId);
+    if (curr != undefined)
+    {
+      return curr.currencyCode;
+    }
+    return "undefined";
+  }
+
+  getVendorName(vendorId: number): string {
+    var name = this.vendor.find(v => v.vendorId == vendorId);
+     if(name)
+    {
+      return name.vendorLongName;
+    }
+    return "undefined";
+  }
+
+  OnFilter() {
+    this.invoiceService.getInvoices(this.vendorId, this.currencyId).subscribe((resp: Invoice[]) => {
+      // console.log();
+      this.invoices = resp;
+    }, error => {
+      alert(error.error);
+      console.log(error);
+    });
+  }
 
 }

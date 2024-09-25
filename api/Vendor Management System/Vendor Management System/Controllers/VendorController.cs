@@ -39,34 +39,27 @@ namespace Vendor_Management_System.Controllers
             {
                 await _context.Vendor.AddAsync(vendor); 
                 await _context.SaveChangesAsync(); 
-                return Created("", new {m = "Added!"}); 
+                return Created("", new { msg = "Added" }); 
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(ex);
             }
         }
 
         [HttpPut]
-        [Route("updatevendor")]
-        public async Task<IActionResult> PutUpdateVendorList([FromBody] Vendor context)
+        [Route("updatevendor/{id}")]
+        public async Task<IActionResult> PutUpdateVendorList([FromBody] Vendor vendor, int id)
         {
             try
             {
-                var vendor = new Vendor
+                if(!await _context.Vendor.AnyAsync(v => v.VendorId == id) && (vendor.VendorId != id))
                 {
-                    VendorId = context.VendorId,
-                    VendorLongName = context.VendorLongName,
-                    VendorCode = context.VendorCode,
-                    VendorPhoneNumber = context.VendorPhoneNumber,
-                    VendorEmail = context.VendorEmail,
-                    VendorCreatedOn = context.VendorCreatedOn,
-                    IsActive = context.IsActive
-                };
-
+                    return NotFound("Vendor not found.");
+                }
                 _context.Vendor.Update(vendor);
                 await _context.SaveChangesAsync(); 
-                return Created("", new { m = "Updated!" }); 
+                return Created("",new {m =  "Updated!" } ); 
             }
             catch (Exception ex)
             {
@@ -75,12 +68,12 @@ namespace Vendor_Management_System.Controllers
         }
 
         [HttpDelete]
-        [Route("{code}deletevendor")]
-        public async Task<IActionResult> DeleteVendorList(string code)
+        [Route("deletevendor/{id}")]
+        public async Task<IActionResult> DeleteVendorList(int id)
         {
             try
             {
-                var vendor = await _context.Vendor.SingleOrDefaultAsync(v => v.VendorCode == code); 
+                var vendor = await _context.Vendor.SingleOrDefaultAsync(v => v.VendorId == id); 
                 if (vendor == null)
                 {
                     return BadRequest("Vendor not found.");
@@ -101,20 +94,24 @@ namespace Vendor_Management_System.Controllers
             }
         }
 
-        //[HttpGet]
-        //[Route("{code}vendorbycode")]
-        //public IActionResult GetVendorByCode(string code)
-        //{
-        //    try
-        //    {
-        //        var v1 = _context.GetVendorByCode(code);
-        //        return Ok(v1);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetVendorById(int id)
+        {
+            try
+            {
+                var vendor = await _context.Vendor.SingleOrDefaultAsync(v => v.VendorId == id);
+                if (vendor == null)
+                {
+                    return NotFound("Vendor not present.");
+                }
+                return Ok(vendor);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
         //[HttpGet]
         //[Route("ExporttoCSV")]

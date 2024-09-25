@@ -1,22 +1,6 @@
 [
   {
     "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
-    "Method": "DeleteCurrencyList",
-    "RelativePath": "api/currency/{code}deletecurrency",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "code",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
     "Method": "PostCreateCurrencyList",
     "RelativePath": "api/currency/createcurrency",
     "HttpMethod": "POST",
@@ -26,6 +10,22 @@
       {
         "Name": "currency",
         "Type": "Vendor_Management_System.Currency",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
+    "Method": "GetCurrencyById",
+    "RelativePath": "api/currency/currencybyid/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -43,31 +43,36 @@
   },
   {
     "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
-    "Method": "PutUpdateCurrencyList",
-    "RelativePath": "api/currency/updatecurrency",
-    "HttpMethod": "PUT",
+    "Method": "DeleteCurrencyList",
+    "RelativePath": "api/currency/deletecurrency/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "context",
-        "Type": "Vendor_Management_System.Currency",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
-    "Method": "DeleteInvoiceList",
-    "RelativePath": "api/invoice/{invoiceNumber}deleteinvoice",
-    "HttpMethod": "DELETE",
+    "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
+    "Method": "PutUpdateCurrencyList",
+    "RelativePath": "api/currency/updatecurrency/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "invoiceNumber",
-        "Type": "System.Int64",
+        "Name": "currency",
+        "Type": "Vendor_Management_System.Currency",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -91,25 +96,73 @@
   },
   {
     "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
-    "Method": "GetInvoiceList",
-    "RelativePath": "api/invoice/invoicelist",
+    "Method": "DeleteInvoiceList",
+    "RelativePath": "api/invoice/deleteinvoice/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "GetInvoiceDetails",
+    "RelativePath": "api/invoice/invoicebyid/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "GetInvoiceList",
+    "RelativePath": "api/invoice/invoicelist/{currencyId}/{vendorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "currencyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "vendorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
     "Method": "PutUpdateInvoiceList",
-    "RelativePath": "api/invoice/updateinvoice",
+    "RelativePath": "api/invoice/updateinvoice/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "context",
+        "Name": "invoice",
         "Type": "Vendor_Management_System.Invoice",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -117,15 +170,15 @@
   },
   {
     "ContainingType": "Vendor_Management_System.Controllers.VendorController",
-    "Method": "DeleteVendorList",
-    "RelativePath": "api/vendor/{code}deletevendor",
-    "HttpMethod": "DELETE",
+    "Method": "GetVendorById",
+    "RelativePath": "api/vendor/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "code",
-        "Type": "System.String",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -149,15 +202,36 @@
   },
   {
     "ContainingType": "Vendor_Management_System.Controllers.VendorController",
+    "Method": "DeleteVendorList",
+    "RelativePath": "api/vendor/deletevendor/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.VendorController",
     "Method": "PutUpdateVendorList",
-    "RelativePath": "api/vendor/updatevendor",
+    "RelativePath": "api/vendor/updatevendor/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "context",
+        "Name": "vendor",
         "Type": "Vendor_Management_System.Vendor",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

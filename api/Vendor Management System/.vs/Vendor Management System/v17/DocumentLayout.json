@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\controllers\\vendorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\controllers\\vendorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\controllers\\currencycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\controllers\\currencycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\controllers\\vendorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\controllers\\vendorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\currency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,24 +27,8 @@
       "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\vendor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|c:\\users\\sandipsingh\\desktop\\vms-test-angular\\api\\vendor management system\\vendor management system\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E61CAF2-A67C-43D5-A664-370748B68AAA}|Vendor Management System\\Vendor Management System.csproj|solutionrelative:vendor management system\\validation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,41 +46,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Currency.cs",
-              "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Currency.cs",
-              "RelativeDocumentMoniker": "Vendor Management System\\Currency.cs",
-              "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Currency.cs",
-              "RelativeToolTip": "Vendor Management System\\Currency.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Vendor.cs",
+              "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Vendor.cs",
+              "RelativeDocumentMoniker": "Vendor Management System\\Vendor.cs",
+              "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Vendor.cs",
+              "RelativeToolTip": "Vendor Management System\\Vendor.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAkwCAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T08:22:35.076Z",
+              "WhenOpened": "2024-09-24T11:30:06.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Invoice.cs",
               "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Invoice.cs",
               "RelativeDocumentMoniker": "Vendor Management System\\Invoice.cs",
               "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Invoice.cs",
               "RelativeToolTip": "Vendor Management System\\Invoice.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T08:22:09.234Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Vendor.cs",
-              "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Vendor.cs",
-              "RelativeDocumentMoniker": "Vendor Management System\\Vendor.cs",
-              "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Vendor.cs",
-              "RelativeToolTip": "Vendor Management System\\Vendor.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Currency.cs",
+              "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Currency.cs",
+              "RelativeDocumentMoniker": "Vendor Management System\\Currency.cs",
+              "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Currency.cs",
+              "RelativeToolTip": "Vendor Management System\\Currency.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T08:21:56.154Z",
+              "WhenOpened": "2024-08-30T08:22:35.076Z",
               "EditorCaption": ""
             },
             {
@@ -103,76 +91,40 @@
               "RelativeDocumentMoniker": "Vendor Management System\\Controllers\\CurrencyController.cs",
               "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Controllers\\CurrencyController.cs",
               "RelativeToolTip": "Vendor Management System\\Controllers\\CurrencyController.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAkwFQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwFkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T10:56:57.202Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Program.cs",
-              "RelativeDocumentMoniker": "Vendor Management System\\Program.cs",
-              "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Program.cs",
-              "RelativeToolTip": "Vendor Management System\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T10:43:18.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "VendorController.cs",
               "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Controllers\\VendorController.cs",
               "RelativeDocumentMoniker": "Vendor Management System\\Controllers\\VendorController.cs",
               "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Controllers\\VendorController.cs",
               "RelativeToolTip": "Vendor Management System\\Controllers\\VendorController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAuwFwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAwG0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T10:12:25.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Vendor Management System\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\AppDbContext.cs",
-              "RelativeToolTip": "Vendor Management System\\AppDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T08:00:38.808Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "InvoiceController.cs",
               "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Controllers\\InvoiceController.cs",
               "RelativeDocumentMoniker": "Vendor Management System\\Controllers\\InvoiceController.cs",
               "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Controllers\\InvoiceController.cs",
               "RelativeToolTip": "Vendor Management System\\Controllers\\InvoiceController.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAkwFcAAABqAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T06:22:16.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Validation.cs",
-              "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Validation.cs",
-              "RelativeDocumentMoniker": "Vendor Management System\\Validation.cs",
-              "ToolTip": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\Validation.cs",
-              "RelativeToolTip": "Vendor Management System\\Validation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T11:09:26.398Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\SandipSingh\\Desktop\\vms-test-angular\\api\\Vendor Management System\\Vendor Management System\\appsettings.json",
               "RelativeDocumentMoniker": "Vendor Management System\\appsettings.json",

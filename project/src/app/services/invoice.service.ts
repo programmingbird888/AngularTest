@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Invoice } from '../models/invoice.model';
+import { Currency } from '../models/currency.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,23 +12,23 @@ export class InvoiceService {
 
   constructor(private http: HttpClient) {}
 
-  getInvoices(): Observable<Invoice[]> {
-    return this.http.get<Invoice[]>(`${this.apiUrl}`+ "/invoicelist");
+  getInvoices(currencyId:number, vendorId:number): Observable<Invoice[]> {
+    return this.http.get<Invoice[]>(`${this.apiUrl}/invoicelist/${currencyId}/${vendorId}`);
   }
 
-  getInvoice(invoiceNumber: string): Observable<Invoice> {
-    return this.http.get<Invoice>(`${this.apiUrl}/${invoiceNumber}` + "invoicebynumber");
+  getInvoice(invoiceId: number): Observable<Invoice> {
+    return this.http.get<Invoice>(`${this.apiUrl}/invoicebyid/${invoiceId}`);
   }
 
   addInvoice(invoice: Invoice): Observable<Invoice> {
     return this.http.post<Invoice>(`${this.apiUrl}`+ "/createinvoice", invoice);
   }
 
-  updateInvoice(invoiceNumber: string, invoice: Invoice): Observable<Invoice> {
-    return this.http.put<Invoice>(`${this.apiUrl}/${invoiceNumber}` + "updateinvoice", invoice);
+  updateInvoice(invoiceId: number, invoice: Invoice): Observable<Invoice> {
+    return this.http.put<Invoice>(`${this.apiUrl}/updateinvoice/${invoiceId}`, invoice);
   }
 
-  deleteInvoice(invoiceNumber: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${invoiceNumber}` + "deleteinvoice");
+  deleteInvoice(invoiceId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/deleteinvoice/${invoiceId}`);
   }
 }

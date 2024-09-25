@@ -23,16 +23,21 @@ export class VendorListComponent implements OnInit {
     });
   }
 
-  deleteVendor(vendorCode: string): void {
-    this.vendorService.deleteVendor(vendorCode).subscribe(() => {
-      this.loadVendors();
-    },err=>{
-      alert(err.error);
-    });
+  deleteVendor(vendorId: number): void {
+    const confirmDelete = confirm("Are you sure you want to delete!")
+    if (confirmDelete) {
+      this.vendorService.deleteVendor(vendorId).subscribe(() => {
+        alert("Vendor Deleted.");
+        this.loadVendors();
+      }, err => {
+        console.log(err.error);
+        alert(err.error);
+      });
+    }
   }
 
-  UpdateVendor(vendorCode:string){
-    this.routes.navigate([`/vendor/vendors/edit/${vendorCode}`]);
+  UpdateVendor(vendorId:number){
+    this.routes.navigate([`/vendor/vendors/edit/${vendorId}`]);
   }
 
   exportToExcel(): void {

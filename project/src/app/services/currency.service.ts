@@ -15,19 +15,19 @@ export class CurrencyService {
     return this.http.get<Currency[]>(`${this.apiUrl}` + "/currencylist");
   }
 
-  getCurrency(currencyCode: string): Observable<Currency> {
-    return this.http.get<Currency>(`${this.apiUrl}/${currencyCode}` + "currencybycode");
+  getCurrency(currencyId : number): Observable<Currency> {
+    return this.http.get<Currency>(`${this.apiUrl}/currencybyid/${currencyId}`);
   }
 
   addCurrency(currency: Currency): Observable<Currency> {
     return this.http.post<Currency>(`${this.apiUrl}` + "/createcurrency", currency);
   }
 
-  updateCurrency(currencyCode: string, currency: Currency): Observable<Currency> {
-    return this.http.put<Currency>(`${this.apiUrl}/${currencyCode}` + "updatecurrency", currency);
+  updateCurrency(currencyId : number, currency: Currency): Observable<Currency> {
+    return this.http.put<Currency>(`${this.apiUrl}/updatecurrency/${currencyId}`, currency);
   }
 
-  deleteCurrency(currencyCode: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${currencyCode}` + "deletecurrency");
+  deleteCurrency(currencyId : number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/deletecurrency/${currencyId}`);
   }
 }

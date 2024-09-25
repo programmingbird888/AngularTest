@@ -59,8 +59,8 @@
           <td class="wrap">{{ vendor.vendorPhoneNumber }}</td>
           <td class="wrap">{{ vendor.isActive ? "Active" : "Inactive" }}</td>
           <td>
-            <button (click)="UpdateVendor(vendor.vendorCode)" class="btn btn-warning btn-sm">Edit</button>
-            <button (click)="deleteVendor(vendor.vendorCode)" class="btn btn-danger btn-sm ms-1">Delete</button>
+            <button (click)="UpdateVendor(vendor.vendorId)" class="btn btn-warning btn-sm">Edit</button>
+            <button (click)="deleteVendor(vendor.vendorId)" class="btn btn-danger btn-sm ms-1">Delete</button>
           </td>
         </tr>
       </tbody>

@@ -1,6 +1,7 @@
 ﻿using Azure.Messaging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Numerics;
 using System.Reactive.Linq;
 
@@ -18,13 +19,14 @@ namespace Vendor_Management_System.Controllers
         }
 
         [HttpGet]
-        [Route("invoicelist")]
-        public IActionResult GetInvoiceList()
+        [Route("invoicelist/{currencyId}/{vendorId}")]
+        public async Task<IActionResult> GetInvoiceList(int currencyId, int vendorId)
         {
             try
             {
-                var i1 = _context.Invoice;
-                return Ok(i1);
+                var invoice = _context.Invoice.Where(i => i.VendorId == (vendorId == 0 ? i.VendorId : vendorId) && i.InvoiceCurrencyId == (currencyId == 0 ? i.InvoiceCurrencyId : currencyId)).ToList();
+                
+                return Ok(invoice);
             }
             catch (Exception ex)
             {
@@ -35,14 +37,13 @@ namespace Vendor_Management_System.Controllers
 
         [HttpPost]
         [Route("createinvoice")]
-        public IActionResult PostCreateInvoiceList([FromBody] Invoice invoice)
+        public async Task<IActionResult> PostCreateInvoiceList([FromBody] Invoice invoice)
         {
             try
             {
-                _context.Invoice.Add(invoice);
-                _context.SaveChanges();
-                IObservable<string> message = Observable.Return("Added!");
-                return Created("", message);
+                await _context.Invoice.AddAsync(invoice);
+                await _context.SaveChangesAsync();
+                return Created("", new { m = "Added." });
             }
             catch (Exception ex)
             {
@@ -52,25 +53,18 @@ namespace Vendor_Management_System.Controllers
         }
 
         [HttpPut]
-        [Route("updateinvoice")]
-        public IActionResult PutUpdateInvoiceList([FromBody] Invoice context)
+        [Route("updateinvoice/{id}")]
+        public async Task<IActionResult> PutUpdateInvoiceList([FromBody] Invoice invoice, int id)
         {
             try
             {
-                var invoice = new Invoice { 
-                    InvoiceId = context.InvoiceId, 
-                    InvoiceNumber = context.InvoiceNumber, 
-                    InvoiceCurrencyId = context.InvoiceCurrencyId, 
-                    VendorId = context.VendorId,
-                    InvoiceAmount = context.InvoiceAmount,
-                    InvoiceReceivedDate = context.InvoiceReceivedDate,
-                    InvoiceDueDate = context.InvoiceDueDate,
-                    IsActive = context.IsActive
-                };
+                if (!await _context.Invoice.AnyAsync(i => i.InvoiceId == id) && (invoice.InvoiceId != id))
+                {
+                    return NotFound("Invocie not found.");
+                }
                 _context.Invoice.Update(invoice);
-                _context.SaveChanges();
-                IObservable<string> message = Observable.Return("Updated!");
-                return Created("", message);
+                await _context.SaveChangesAsync();
+                return Created("", new {m = "Edited."});
             }
             catch (Exception ex)
             {
@@ -80,21 +74,20 @@ namespace Vendor_Management_System.Controllers
         }
 
         [HttpDelete]
-        [Route("{invoiceNumber}deleteinvoice")]
-        public IActionResult DeleteInvoiceList(Int64 invoiceNumber)
+        [Route("deleteinvoice/{id}")]
+        public async Task<IActionResult> DeleteInvoiceList(int id)
         {
             try
             {
-                var invoice = _context.Invoice.SingleOrDefault(inv => inv.InvoiceNumber == invoiceNumber);
+                var invoice = await _context.Invoice.SingleOrDefaultAsync(inv => inv.InvoiceId == id);
                 if (invoice == null)
                 {
-                    return NotFound("Invoices not found.");
+                    return BadRequest("Invoice not found.");
                 }
 
                 _context.Invoice.Remove(invoice);
-                _context.SaveChanges();
-                IObservable<string> message = Observable.Return("Removed!");
-                return Created("", message);
+                await _context.SaveChangesAsync();
+                return Created("", new { m = "Deleted." });
             }
             catch (Exception ex)
             {
@@ -102,6 +95,27 @@ namespace Vendor_Management_System.Controllers
             }
 
         }
+
+        [HttpGet]
+        [Route("invoicebyid/{id}")]
+        public async Task<IActionResult> GetInvoiceDetails(int id)
+        {
+            try
+            {
+                var invoice = _context.Invoice.SingleOrDefault(i => i.InvoiceId == id);
+                if(invoice == null)
+                {
+                    return NotFound("Invoice not present.");
+                }
+                return Ok(invoice);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
 
         //[HttpGet]
         //[Route("invoicebyvendorid")]

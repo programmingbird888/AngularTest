@@ -9,7 +9,7 @@ const routes: Routes = [
 
   { path: 'vendors', component: VendorListComponent },
   { path: 'vendors/new', component: VendorDetailComponent },
-  { path: 'vendors/edit/:vendorCode', component: VendorDetailComponent },
+  { path: 'vendors/edit/:vendorId', component: VendorDetailComponent },
 
 ];
 

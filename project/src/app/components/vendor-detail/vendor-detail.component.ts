@@ -11,7 +11,8 @@ import { Vendor } from '../../models/vendor.model';
 export class VendorDetailComponent implements OnInit {
   vendorForm: FormGroup;
   isEdit: boolean = false;
-  vendorCode: string | null = null;
+  vendorId: number = 0;
+  submitted: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -30,16 +31,16 @@ export class VendorDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.vendorCode = params['vendorCode'];
-      if (this.vendorCode) {
-        this.loadVendor(this.vendorCode);
+      this.vendorId = Number(params['vendorId']);
+      if (this.vendorId) {
+        this.loadVendor(this.vendorId);
         this.isEdit = true;
       }
     });
   }
 
-  loadVendor(vendorCode: string): void {
-    this.vendorService.getVendor(vendorCode).subscribe(vendor => {
+  loadVendor(vendorId: number): void {
+    this.vendorService.getVendor(vendorId).subscribe(vendor => {
       this.vendorForm.patchValue(vendor);
     });
   }
@@ -47,17 +48,24 @@ export class VendorDetailComponent implements OnInit {
   onSubmit(): void {
     if (this.vendorForm.valid) {
       const vendor: Vendor = this.vendorForm.value;
+      
       if (this.isEdit) {
-        this.vendorService.updateVendor(this.vendorCode!, vendor).subscribe(() => {
+        vendor.vendorId = this.vendorId;
+        this.vendorService.updateVendor(this.vendorId, vendor).subscribe(() => {
+          alert("Vendor edited.");
           this.router.navigate(['/vendor/vendors']);
-        },err=>{
+        }, err => {
+          console.log(err);
           alert(err.error);
         });
       } else {
         this.vendorService.addVendor(vendor).subscribe(() => {
+          this.submitted = true;
+          alert("Vendor Added.");
           this.router.navigate(['/vendor/vendors']);
-        },err=>{
-          alert(err.error);
+        }, err => {
+          console.log(err);
+          alert(err);
         });
       }
     }

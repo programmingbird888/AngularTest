@@ -1,22 +1,23 @@
 <div class="container">
-    <h2>{{ isEdit ? 'Edit Currency' : 'Add Currency' }}</h2>
-    <form [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
-      <div class="mb-3">
-        <label>Currency Code</label>
-        <input formControlName="currencyCode" class="form-control" />
-        <div *ngIf="currencyForm.get('currencyCode')?.invalid && currencyForm.get('currencyCode')?.touched" class="text-danger">
-          Currency Code is required.
-        </div>
+  <h2>{{ isEdit ? 'Edit Currency' : 'Add Currency' }}</h2>
+  <form [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label>Currency Code</label>
+      <input formControlName="currencyCode" class="form-control" />
+      <div *ngIf="currencyForm.get('currencyCode')?.invalid && currencyForm.get('currencyCode')?.touched"
+        class="text-danger">
+        Currency Code is required.
       </div>
-      <div class="mb-3">
-        <label>Currency Name</label>
-        <input formControlName="currencyName" class="form-control" />
-        <div *ngIf="currencyForm.get('currencyName')?.invalid && currencyForm.get('currencyName')?.touched" class="text-danger">
-          Currency Name is required.
-        </div>
+    </div>
+    <div class="mb-3">
+      <label>Currency Name</label>
+      <input formControlName="currencyName" class="form-control" />
+      <div *ngIf="currencyForm.get('currencyName')?.invalid && currencyForm.get('currencyName')?.touched"
+        class="text-danger">
+        Currency Name is required.
       </div>
-      <button type="submit" class="btn btn-primary mt-2">Save</button>&nbsp;
-      <a routerLink="/currencies" class="btn btn-secondary mt-2">Cancel</a>
-    </form>
-  </div>
-  
+    </div>
+    <button type="submit" class="btn btn-primary mt-2" [disabled]="currencyForm.invalid">Save</button>&nbsp;
+    <a routerLink="/currency/currencies" class="btn btn-secondary mt-2">Cancel</a>
+  </form>
+</div>

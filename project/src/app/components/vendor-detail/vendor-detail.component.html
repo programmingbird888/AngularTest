@@ -31,11 +31,11 @@
         Enter a valid email.
       </div>
     </div>
-    <div class="form-check">
+    <!-- <div class="form-check">
       <input formControlName="isActive" type="checkbox" class="form-check-input" />
       <label class="form-check-label">Is Active</label>
-    </div>
-    <button type="submit" class="btn btn-primary mt-2">Save</button>&nbsp;
-    <a routerLink="/vendors" class="btn btn-secondary mt-2">Cancel</a>
+    </div> -->
+    <button type="submit" class="btn btn-primary mt-2" [disabled]="vendorForm.invalid">Save</button>&nbsp;
+    <a routerLink="/vendor/vendors" class="btn btn-secondary mt-2">Cancel</a>
   </form>
 </div>

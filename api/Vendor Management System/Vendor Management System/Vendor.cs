@@ -15,7 +15,7 @@ namespace Vendor_Management_System
         public string VendorLongName { get; set; }
 
         [Required(ErrorMessage = "Vendor code is required.")]
-        [StringLength(20, ErrorMessage = "Vendor code cannot exceed 20 characters.")]
+        [StringLength(50, ErrorMessage = "Vendor code cannot exceed 50 characters.")]
         [RegularExpression(@"^[A-Za-z0-9]+$", ErrorMessage = "Vendor code can only contain letters and numbers.")]
         public string VendorCode { get; set; }
 

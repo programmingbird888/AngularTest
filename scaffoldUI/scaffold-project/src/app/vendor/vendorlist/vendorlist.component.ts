@@ -33,7 +33,7 @@ export class VendorListComponent implements OnInit {
   }
 
   UpdateVendor(vendorCode:string){
-    this.routes.navigate(["vendor/vendors/edit/"+vendorCode]);
+    this.routes.navigate(["vendor/vendors/edit/" + vendorCode]);
   }
 
   exportToExcel(): void {

@@ -29,15 +29,59 @@
     /* border: 2px solid black; */
     margin-top: 2vh;
   }
+
+  .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 </style>
 
 <div class="container">
   <h2>Invoice List</h2>
-  <div class="container">
-    <a routerLink="/invoices/new" class="btn btn-primary mb-2">Create Invoice</a><br>
-    <button class="btn btn-primary mb-3" (click)="exportToExcel()">Export to Excel</button>
+
+  <div class="options">
+    <div class="container">
+      <a routerLink="/invoice/invoices/new" class="btn btn-primary mb-2">Create Invoice</a><br>
+      <button class="btn btn-primary mb-3" (click)="exportToExcel()">Export to Excel</button>
+    </div>
+    <div class="container">
+      <!-- <div class="row mb-4"> -->
+
+      <!-- <div class="col-md-6"> -->
+      <div class="form-group">
+        <label for="vendorSelect">Select Vendor:</label>
+        <select id="vendorSelect" class="form-control" [(ngModel)]="vendorId" (change)="OnFilter()">
+          <option value="">-- Select Vendor --</option>
+          <option *ngFor="let vendorName of vendor" [value]="vendorName.vendorId">
+            {{ vendorName.vendorLongName }}
+          </option>
+        </select>
+      </div>
+      <!-- </div> -->
+
+      <!-- <div class="row mb-4">
+        <div class="col-md-6"> -->
+      <div class="form-group">
+        <label for="currencySelect">Select Currency:</label>
+        <select id="currencySelect" class="form-control" [(ngModel)]="currencyId" (change)="OnFilter()">
+          <option value="">-- Select Currency --</option>
+          <option *ngFor="let currency of currency" [value]="currency.currencyId">
+            {{ currency.currencyCode }}
+          </option>
+        </select>
+      </div>
+    </div>
   </div>
-  <div class="table-responsive border border-dark">
+
+
+
+  <!-- </div>
+
+    </div> -->
+
+  <div class="table-responsive border border-dark mt-4">
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
@@ -56,21 +100,23 @@
         <tr *ngFor="let invoice of invoices">
           <td class="wrap">{{ invoice.invoiceId }}</td>
           <td class="wrap">{{ invoice.invoiceNumber }}</td>
-          <td class="wrap">{{ invoice.invoiceAmount }}</td>
-          <td class="wrap">{{ invoice.invoiceCurrencyCode }}</td>
-          <td class="wrap">{{ invoice.invoiceReceivedDate | date }}</td>
-          <td class="wrap">{{ invoice.invoiceDueDate | date }}</td>
+          <td class="wrap">{{ invoice.invoiceAmount | currency : getCurrencyCode(invoice.invoiceCurrencyId)}}</td>
+          <td class="wrap">{{ getCurrencyCode(invoice.invoiceCurrencyId) }}</td>
+          <td class="wrap">{{ invoice.invoiceReceivedDate | date: "dd-MM-yyyy" }}</td>
+          <td class="wrap">{{ invoice.invoiceDueDate | date: "dd-MM-yyyy" }}</td>
           <td class="wrap">{{ invoice.isActive ? "Active" : "Inactive" }}</td>
-          <td class="wrap">{{ invoice.vendorCode }}</td>
+          <td class="wrap">{{ getVendorName(invoice.vendorId) }}</td>
           <td>
-            <button (click)="UpdateInvoice(invoice.invoiceNumber)" class="btn btn-warning btn-sm">Edit</button>
-            <button (click)="deleteInvoice(invoice.invoiceNumber)" class="btn btn-danger btn-sm ms-1">Delete</button>
+            <button (click)="UpdateInvoice(invoice.invoiceId)" class="btn btn-warning btn-sm">Edit</button>
+            <button (click)="deleteInvoice(invoice.invoiceId)" class="btn btn-danger btn-sm ms-1">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+
   <div class="myclass">
     <p>Total invoices: {{invoices.length}}</p>
   </div>
+
 </div>

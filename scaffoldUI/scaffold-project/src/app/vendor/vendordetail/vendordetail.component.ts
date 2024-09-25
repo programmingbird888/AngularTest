@@ -13,7 +13,7 @@ import * as XLSX from 'xlsx';
 export class VendordetailComponent implements OnInit{
   vendorForm: FormGroup;
   isEdit: boolean = false;
-  vendorCode: string | null = null;
+  vendorId: number | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -32,25 +32,29 @@ export class VendordetailComponent implements OnInit{
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.vendorCode = params['vendorCode'];
-      if (this.vendorCode) {
-        this.loadVendor(this.vendorCode);
+      this.vendorId = params['vendorId'];
+      if (this.vendorId) {
+        this.loadVendor(this.vendorId);
         this.isEdit = true;
       }
     });
   }
 
-  loadVendor(vendorCode: string): void {
-    this.vendorService.getVendor(vendorCode).subscribe(vendor => {
+  loadVendor(vendorId: number): void {
+    this.vendorService.getVendor(vendorId).subscribe(vendor => {
       this.vendorForm.patchValue(vendor);
-    });
+    },
+      err => {
+        console.error(err);
+      }
+    );
   }
 
   onSubmit(): void {
     if (this.vendorForm.valid) {
       const vendor: Vendor = this.vendorForm.value;
       if (this.isEdit) {
-        this.vendorService.updateVendor(this.vendorCode!, vendor).subscribe(() => {
+        this.vendorService.updateVendor(this.vendorId!, vendor).subscribe(() => {
           this.router.navigate(['/vendor/vendors']);
         },err=>{
           alert(err.error);

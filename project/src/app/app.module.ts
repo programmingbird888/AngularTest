@@ -17,10 +17,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     // VendorListComponent,
     // VendorDetailComponent,
-    CurrencyListComponent,
-    CurrencyDetailComponent,
-    InvoiceListComponent,
-    InvoiceDetailComponent
+    // CurrencyListComponent,
+    // CurrencyDetailComponent,
+    // InvoiceListComponent,
+    // InvoiceDetailComponent
   ],
   imports: [
     BrowserModule,

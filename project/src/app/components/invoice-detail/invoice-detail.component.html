@@ -6,12 +6,12 @@
       <input formControlName="invoiceNumber" class="form-control" />
       <div *ngIf="invoiceForm.get('invoiceNumber')?.invalid && invoiceForm.get('invoiceNumber')?.touched"
         class="text-danger">
-        Invoice Number is required.
+        Invoice Number is required and must be min 8 digits only.
       </div>
       <div class="mb-3">
-        <label for="code">Vendor Code</label>
-        <select formControlName="vendorCode" class="form-control" id="code">
-          <option *ngFor="let vendor of vendorlist" [value]="vendor.vendorCode">{{ vendor.vendorCode }}</option>
+        <label for="code">Vendor Name</label>
+        <select formControlName="vendorId" class="form-control" id="code">
+          <option *ngFor="let vendor of vendorlist" [value]="vendor.vendorId">{{ vendor.vendorLongName }}</option>
         </select>
       </div>
     </div>
@@ -25,8 +25,8 @@
     </div>
     <div class="mb-3">
       <label for="currencycode">Invoice Currency Code</label>
-      <select formControlName="invoiceCurrencyCode" class="form-control" id="currencycode">
-        <option *ngFor="let currency of currencylist" [value]="currency.currencyCode">{{ currency.currencyCode }}
+      <select formControlName="invoiceCurrencyId" class="form-control" id="currencycode">
+        <option *ngFor="let currency of currencylist" [value]="currency.currencyId">{{ currency.currencyCode }}
         </option>
       </select>
     </div>
@@ -38,11 +38,11 @@
         Invoice Due Date is required.
       </div>
     </div>
-    <div class="form-check">
+    <!-- <div class="form-check">
       <input formControlName="isActive" type="checkbox" class="form-check-input" />
       <label class="form-check-label">Is Active</label>
-    </div>
-    <button type="submit" class="btn btn-primary mt-2">Save</button>&nbsp;
-    <a routerLink="/invoices" class="btn btn-secondary mt-2">Cancel</a>
+    </div> -->
+    <button type="submit" class="btn btn-primary mt-2" [disabled]="invoiceForm.invalid">Save</button>&nbsp;
+    <a routerLink="/invoice/invoices" class="btn btn-secondary mt-2">Cancel</a>
   </form>
 </div>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Numerics;
 using System.Reactive.Linq;
 
 namespace Vendor_Management_System.Controllers
@@ -22,8 +23,8 @@ namespace Vendor_Management_System.Controllers
         {
             try
             {
-                var c1 = await _context.Currency.ToListAsync();
-                return Ok(c1);
+                var currency = await _context.Currency.ToListAsync();
+                return Ok(currency);
             }
             catch (Exception ex)
             {
@@ -37,9 +38,10 @@ namespace Vendor_Management_System.Controllers
         {
             try
             {
+                currency.CurrencyCode.ToUpper();
                 await _context.Currency.AddAsync(currency); 
                 await _context.SaveChangesAsync();
-                return Created("", "Added!");
+                return Created("", new {m = "Added!" });
             }
             catch (Exception ex)
             {
@@ -48,22 +50,18 @@ namespace Vendor_Management_System.Controllers
         }
 
         [HttpPut]
-        [Route("updatecurrency")]
-        public async Task<IActionResult> PutUpdateCurrencyList([FromBody] Currency context)
+        [Route("updatecurrency/{id}")]
+        public async Task<IActionResult> PutUpdateCurrencyList([FromBody] Currency currency, int id)
         {
             try
             {
-                var currency = new Currency
+                if (!await _context.Currency.AnyAsync(c => c.CurrencyId == id) && (currency.CurrencyId != id))
                 {
-                    CurrencyId = context.CurrencyId,
-                    CurrencyName = context.CurrencyName,
-                    CurrencyCode = context.CurrencyCode
-                };
-
+                    return NotFound("Currency not found.");
+                }
                 _context.Currency.Update(currency);
-                await _context.SaveChangesAsync(); 
-
-                return Ok("Updated!"); 
+                await _context.SaveChangesAsync();
+                return Created("", new { m = "Edited." }); 
             }
             catch (Exception ex)
             {
@@ -72,12 +70,12 @@ namespace Vendor_Management_System.Controllers
         }
 
         [HttpDelete]
-        [Route("{code}deletecurrency")]
-        public async Task<IActionResult> DeleteCurrencyList(string code)
+        [Route("deletecurrency/{id}")]
+        public async Task<IActionResult> DeleteCurrencyList(int id)
         {
             try
             {
-                var currency = await _context.Currency.SingleOrDefaultAsync(c => c.CurrencyCode == code);
+                var currency = await _context.Currency.SingleOrDefaultAsync(c => c.CurrencyId == id);
                 if (currency == null)
                 {
                     return NotFound("Currency not found.");
@@ -85,8 +83,7 @@ namespace Vendor_Management_System.Controllers
 
                 _context.Currency.Remove(currency);
                 await _context.SaveChangesAsync();
-
-                return Ok("Removed!"); 
+                return Created("", new { m = "Deleted." });
             }
             catch (Exception ex)
             {
@@ -94,6 +91,24 @@ namespace Vendor_Management_System.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("currencybyid/{id}")]
+        public async Task<IActionResult> GetCurrencyById(int id)
+        {
+            try
+            {
+                var currency = await _context.Currency.SingleOrDefaultAsync(c => c.CurrencyId == id);
+                if (currency == null)
+                {
+                    return NotFound("Currency not present.");
+                }
+                return Ok(currency);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
         //[HttpGet]
         //[Route("{code}currencybycode")]

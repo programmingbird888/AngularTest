@@ -23,14 +23,18 @@ export class CurrencyListComponent implements OnInit {
     });
   }
 
-  deleteCurrency(currencyCode: string): void {
-    this.currencyService.deleteCurrency(currencyCode).subscribe(() => {
-      this.loadCurrencies();
-    });
+  deleteCurrency(currencyId: number): void {
+    const confirmDelete = confirm("Are you sure you want to delete!")
+    if (confirmDelete) {
+      this.currencyService.deleteCurrency(currencyId).subscribe(() => {
+        alert("Currency Deleted.");
+        this.loadCurrencies();
+      });
+    }
   }
 
-  UpdateCurrency(currencyCode:string){
-    this.routes.navigate([`currencies/edit/${currencyCode}`]);
+  UpdateCurrency(currencyId : number){
+    this.routes.navigate([`currency/currencies/edit/${currencyId}`]);
   }
 
   exportToExcel(): void {

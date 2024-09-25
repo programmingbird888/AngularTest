@@ -15,15 +15,15 @@ export class VendorService {
     return this.http.get<Vendor[]>(`${this.apiUrl}` + "/vendorlist");
   }
 
-  getVendor(vendorCode: string): Observable<Vendor> {
-    return this.http.get<Vendor>(`${this.apiUrl}/${vendorCode}` + "vendorbycode");
+  getVendor(vendorId: number): Observable<Vendor> {
+    return this.http.get<Vendor>(`${this.apiUrl}/${vendorId}`);
   }
 
   addVendor(vendor: Vendor): Observable<Vendor> {
     return this.http.post<Vendor>(`${this.apiUrl}` + "/createvendor", vendor);
   }
 
-  updateVendor(vendorCode: string, vendor: Vendor): Observable<Vendor> {
+  updateVendor(vendorId: number, vendor: Vendor): Observable<Vendor> {
     return this.http.put<Vendor>(`${this.apiUrl}` + "/updatevendor", vendor);
   }
 

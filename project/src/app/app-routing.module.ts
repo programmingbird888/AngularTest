@@ -12,16 +12,18 @@ const routes: Routes = [
   // { path: 'vendors/new', component: VendorDetailComponent },
   // { path: 'vendors/edit/:vendorCode', component: VendorDetailComponent },
 
-  { path: 'invoices', component: InvoiceListComponent },
-  { path: 'invoices/new', component: InvoiceDetailComponent },
-  { path: 'invoices/edit/:invoiceNumber', component: InvoiceDetailComponent },
+  // { path: 'invoices', component: InvoiceListComponent },
+  // { path: 'invoices/new', component: InvoiceDetailComponent },
+  // { path: 'invoices/edit/:invoiceId', component: InvoiceDetailComponent },
 
-  { path: 'currencies', component: CurrencyListComponent },
-  { path: 'currencies/new', component: CurrencyDetailComponent },
-  { path: 'currencies/edit/:currencyCode', component: CurrencyDetailComponent },
+  // { path: 'currencies', component: CurrencyListComponent },
+  // { path: 'currencies/new', component: CurrencyDetailComponent },
+  // { path: 'currencies/edit/:currencyCode', component: CurrencyDetailComponent },
   
-  // { path: '', redirectTo: '/vendors', pathMatch: 'full' },
+  { path: '', redirectTo: 'vendor/vendors', pathMatch: 'full' },
   { path: 'vendor', loadChildren: () => import('./vendor/vendor.module').then(m => m.VendorModule) },
+  { path: 'invoice', loadChildren: () => import('./invoice/invoice.module').then(m => m.InvoiceModule) },
+  { path: 'currency', loadChildren: () => import('./currency/currency.module').then(m => m.CurrencyModule) },
   
 ];
 
