@@ -128,8 +128,8 @@
   },
   {
     "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
-    "Method": "GetInvoiceList",
-    "RelativePath": "api/invoice/invoicelist/{currencyId}/{vendorId}",
+    "Method": "GetVendorList",
+    "RelativePath": "api/invoice/invoicelist/{currencyId}/{vendorId}/{page}/{pageSize}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -142,6 +142,47 @@
       {
         "Name": "vendorId",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "GetInvoiceView",
+    "RelativePath": "api/invoice/invoiceview",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.InvoiceController",
+    "Method": "GetInvoiceView",
+    "RelativePath": "api/invoice/invoiceviewfetch/{property}/{value}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "property",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "value",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -240,11 +281,22 @@
   {
     "ContainingType": "Vendor_Management_System.Controllers.VendorController",
     "Method": "GetVendorList",
-    "RelativePath": "api/vendor/vendorlist",
+    "RelativePath": "api/vendor/vendorlist/{page}/{pageSize}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

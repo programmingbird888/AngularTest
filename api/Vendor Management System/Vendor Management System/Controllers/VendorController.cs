@@ -17,19 +17,47 @@ namespace Vendor_Management_System.Controllers
         }
 
         [HttpGet]
-        [Route("vendorlist")]
-        public async Task<IActionResult> GetVendorList()
+        [Route("vendorlist/{page}/{pageSize}")]
+        public async Task<IActionResult> GetVendorList(int page, int pageSize = 5)
         {
             try
             {
-                var v1 = await _context.Vendor.ToListAsync(); 
-                return Ok(v1);
+                var totalCount = await _context.Vendor.CountAsync();
+
+                var vendors = await _context.Vendor
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+
+                return Ok(new
+                {
+                    Vendors = vendors,
+                    TotalCount = totalCount,
+                    CurrentPage = page,
+                    TotalPages = (int)Math.Ceiling((double)totalCount / pageSize)
+                });
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+
+
+        //[HttpGet]
+        //[Route("vendorlist")]
+        //public async Task<IActionResult> GetVendorList()
+        //{
+        //    try
+        //    {
+        //        var vendor = await _context.Vendor.ToListAsync();    
+        //        return Ok(vendor);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
 
         [HttpPost]
         [Route("createvendor")]

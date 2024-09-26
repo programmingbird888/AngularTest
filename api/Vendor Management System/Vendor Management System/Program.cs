@@ -13,6 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton(typeof(Vendor_Management_System.Vendor));
 builder.Services.AddSingleton(typeof(Vendor_Management_System.Invoice));
 builder.Services.AddSingleton(typeof(Vendor_Management_System.Currency));
+builder.Services.AddSingleton(typeof(Vendor_Management_System.InvoiceView));
+
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))

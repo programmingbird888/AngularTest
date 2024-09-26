@@ -18,13 +18,15 @@ export class InvoiceListComponent implements OnInit {
   currency: Currency[] = [];
   currencyId: number = 0;
   vendorId:number = 0
+  currentPage: number = 1;
+  pageSize: number = 5;
 
   constructor(private invoiceService: InvoiceService, private routes:Router, private vendorService: VendorService, private currencyService: CurrencyService) {}
 
   ngOnInit(): void {
     this.loadInvoices();
 
-    this.vendorService.getVendors().subscribe(data => {
+    this.vendorService.getVendors(this.currentPage, this.pageSize).subscribe(data => {
       this.vendor = data;
     }, err => {
       alert(err.error);
@@ -75,7 +77,7 @@ export class InvoiceListComponent implements OnInit {
 
   getVendorName(vendorId: number): string {
     var name = this.vendor.find(v => v.vendorId == vendorId);
-     if(name)
+    if (name != undefined)
     {
       return name.vendorLongName;
     }

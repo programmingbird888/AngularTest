@@ -18,6 +18,8 @@ export class InvoiceDetailComponent implements OnInit {
   invoiceId: number = 0;
   vendorlist: Vendor[] = [];
   currencylist: Currency[] = [];
+  currentPage: number = 1;
+  pageSize: number = 5;
 
   constructor(
     private fb: FormBuilder,
@@ -45,7 +47,7 @@ export class InvoiceDetailComponent implements OnInit {
         this.isEdit = true;
       }
     });
-    this.vendorService.getVendors().subscribe(v=>this.vendorlist = v);
+    this.vendorService.getVendors(this.currentPage, this.pageSize).subscribe(v=>this.vendorlist = v);
     this.currencyService.getCurrencies().subscribe(v=>this.currencylist = v);
   }
 

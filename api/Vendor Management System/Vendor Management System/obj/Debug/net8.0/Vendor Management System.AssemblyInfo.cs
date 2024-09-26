@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vendor Management System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80abcc6d96105e2f7a9c59e83d56c772724c19fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec681b95b64230de706aded816fb024da79828db")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vendor Management System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vendor Management System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -11,8 +11,8 @@ export class VendorService {
 
   constructor(private http: HttpClient) {}
 
-  getVendors(): Observable<Vendor[]> {
-    return this.http.get<Vendor[]>(`${this.apiUrl}` + "/vendorlist");
+  getVendors(page: number, pageSize: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/vendorlist/${page}/${pageSize}`);
   }
 
   getVendor(vendorId: number): Observable<Vendor> {
