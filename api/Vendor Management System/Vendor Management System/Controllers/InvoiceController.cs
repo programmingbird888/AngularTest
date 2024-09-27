@@ -6,6 +6,9 @@ using System.Linq;
 using System.Numerics;
 using System.Reactive.Linq;
 using System.Reflection;
+using System.Linq.Expressions;
+using System;
+using Vendor_Management_System.Models;
 
 namespace Vendor_Management_System.Controllers
 {
@@ -27,13 +30,17 @@ namespace Vendor_Management_System.Controllers
             try
             {
                 var totalInvoiceCount = await _context.Invoice.CountAsync();
+
                 var invoice = _context.Invoice.Where(i => i.VendorId == (vendorId == 0 ? i.VendorId : vendorId) && i.InvoiceCurrencyId == (currencyId == 0 ? i.InvoiceCurrencyId : currencyId)).ToList();
 
                 var invoicePage = await _context.Invoice
                     .Skip((page - 1) * pageSize)
                     .Take(pageSize)
                     .ToListAsync();
-
+                if (page > invoicePage.Count)
+                {
+                    return NotFound("Page out of range.");
+                }
                 return Ok(new
                 {
                     Invoice = invoice,
@@ -47,6 +54,24 @@ namespace Vendor_Management_System.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        //[HttpGet]
+        //[Route("invoicelist/lambda/{property}/{value}")]
+        //public async Task<IActionResult> GetLambda(string property, string value)
+        //{
+        //    var parameterExpression =
+        //    Expression.Parameter(Type.GetType("ExpressionTreeTests.InvoiceView"), "invoiceView");
+
+        //    var constant = Expression.Constant(value);
+        //    var property1 = Expression.Property(parameterExpression, property);
+        //    var expression = Expression.Equal(property1, constant);
+        //    var lambda = Expression.Lambda<Func<InvoiceView, bool>>(expression, parameterExpression);
+
+        //    var query = await _context.InvoiceView.Where(lambda).ToListAsync();
+
+        //    return Ok(query);
+
+        //}
 
         [HttpPost]
         [Route("createinvoice")]

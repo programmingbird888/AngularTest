@@ -4,7 +4,7 @@ using System.Linq;
 using System.Numerics;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Vendor_Management_System
+namespace Vendor_Management_System.Models
 {
     [Table("Currencies")]
     public class Currency
@@ -21,7 +21,7 @@ namespace Vendor_Management_System
         [StringLength(3, ErrorMessage = "Currency code must be exactly 3 characters long.")]
         [RegularExpression(@"^[A-Z]{3}$", ErrorMessage = "Currency code must be in uppercase and exactly 3 letters.")]
         public string CurrencyCode { get; set; }
-       
+
         //static int Id { get; set; }
 
         //public static List<Currency> CurrencyList = new List<Currency>

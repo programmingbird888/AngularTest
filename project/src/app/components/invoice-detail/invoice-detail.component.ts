@@ -48,7 +48,7 @@ export class InvoiceDetailComponent implements OnInit {
       }
     });
     this.vendorService.getVendors(this.currentPage, this.pageSize).subscribe(v=>this.vendorlist = v);
-    this.currencyService.getCurrencies().subscribe(v=>this.currencylist = v);
+    this.currencyService.getCurrencies(this.currentPage, this.pageSize).subscribe(v=>this.currencylist = v);
   }
 
   loadInvoice(invoiceId: number): void {

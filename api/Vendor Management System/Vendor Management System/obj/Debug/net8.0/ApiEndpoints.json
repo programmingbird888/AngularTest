@@ -34,11 +34,22 @@
   {
     "ContainingType": "Vendor_Management_System.Controllers.CurrencyController",
     "Method": "GetCurrencyList",
-    "RelativePath": "api/currency/currencylist",
+    "RelativePath": "api/currency/currencylist/{page}/{pageSize}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -273,6 +284,27 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Vendor_Management_System.Controllers.VendorController",
+    "Method": "GetLambda",
+    "RelativePath": "api/vendor/vendor/lambda/{property}/{value}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "property",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "value",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

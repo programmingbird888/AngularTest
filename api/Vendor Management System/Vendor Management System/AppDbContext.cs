@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Reflection.Emit;
+using Vendor_Management_System.Models;
 namespace Vendor_Management_System
 {
     public class AppDbContext : DbContext

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Vendor_Management_System
+namespace Vendor_Management_System.Models
 {
     [Table("Vendors")]
     public class Vendor

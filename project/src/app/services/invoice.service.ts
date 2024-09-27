@@ -12,8 +12,8 @@ export class InvoiceService {
 
   constructor(private http: HttpClient) {}
 
-  getInvoices(currencyId:number, vendorId:number): Observable<Invoice[]> {
-    return this.http.get<Invoice[]>(`${this.apiUrl}/invoicelist/${currencyId}/${vendorId}`);
+  getInvoices(currencyId:number, vendorId:number, page:number, pageSize:number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/invoicelist/${currencyId}/${vendorId}/${page}/${pageSize}`);
   }
 
   getInvoice(invoiceId: number): Observable<Invoice> {

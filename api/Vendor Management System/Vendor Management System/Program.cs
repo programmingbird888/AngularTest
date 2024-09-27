@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Vendor_Management_System;
+using Vendor_Management_System.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +11,10 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton(typeof(Vendor_Management_System.Vendor));
-builder.Services.AddSingleton(typeof(Vendor_Management_System.Invoice));
-builder.Services.AddSingleton(typeof(Vendor_Management_System.Currency));
-builder.Services.AddSingleton(typeof(Vendor_Management_System.InvoiceView));
+builder.Services.AddSingleton(typeof(Vendor));
+builder.Services.AddSingleton(typeof(Invoice));
+builder.Services.AddSingleton(typeof(Currency));
+builder.Services.AddSingleton(typeof(InvoiceView));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

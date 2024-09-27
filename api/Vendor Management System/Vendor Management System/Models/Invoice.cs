@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 
-namespace Vendor_Management_System
+namespace Vendor_Management_System.Models
 {
     [Table("Invoices")]
     public class Invoice
@@ -13,7 +13,7 @@ namespace Vendor_Management_System
 
         [Required(ErrorMessage = "Invoice number is required.")]
         [Range(1, long.MaxValue, ErrorMessage = "Invoice number must be a positive number.")]
-        public Int64 InvoiceNumber { get; set; }
+        public long InvoiceNumber { get; set; }
 
         [Required(ErrorMessage = "Invoice currency ID is required.")]
         [Range(1, int.MaxValue, ErrorMessage = "Invoice currency ID must be a positive number.")]
@@ -58,7 +58,7 @@ namespace Vendor_Management_System
         //    new Invoice(){InvoiceId = 7, InvoiceNumber = 12345684, InvoiceCurrencyId = 2, VendorId = 1, InvoiceAmount = 2000, InvoiceReceivedDate = DateTime.Now, InvoiceDueDate = DateTime.Parse("28-08-2024"), IsActive = true},
         //    new Invoice(){InvoiceId = 8, InvoiceNumber = 12345685, InvoiceCurrencyId = 1, VendorId = 2, InvoiceAmount = 2250, InvoiceReceivedDate = DateTime.Now, InvoiceDueDate = DateTime.Parse("30-08-2024"), IsActive = true},
         //    new Invoice(){InvoiceId = 9, InvoiceNumber = 12345686, InvoiceCurrencyId = 2, VendorId = 3, InvoiceAmount = 2500, InvoiceReceivedDate = DateTime.Now, InvoiceDueDate = DateTime.Parse("02-09-2024"), IsActive = true},
-         
+
 
         //};
 

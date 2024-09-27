@@ -10,17 +10,38 @@ import { Router } from '@angular/router';
 })
 export class CurrencyListComponent implements OnInit {
   currencies: Currency[] = [];
-
+  totalCount = 0;
+  totalPages = 0;
+  currentPage = 1;
+  pageSize = 5;
   constructor(private currencyService: CurrencyService, private routes:Router) {}
 
   ngOnInit(): void {
     this.loadCurrencies();
   }
 
-  loadCurrencies(): void {
-    this.currencyService.getCurrencies().subscribe(currencies => {
-      this.currencies = currencies;
-    });
+loadCurrencies(): void {
+  this.currencyService.getCurrencies(this.currentPage,this.pageSize).subscribe(
+    response => {
+      if (response && response.currency) {
+        console.log(response.currencies);
+        this.currencies = response.currency;
+        this.totalCount = response.totalCount;
+        this.totalPages = response.totalPages;
+      }
+    }
+  );
+}
+
+  // loadCurrencies(): void {
+  //   this.currencyService.getCurrencies(this.currentPage, this.pageSize).subscribe(currencies => {
+  //     this.currencies = currencies;
+  //   });
+  // }
+
+  changePage(page:number): void {
+    this.currentPage = page;
+    this.loadCurrencies();
   }
 
   deleteCurrency(currencyId: number): void {

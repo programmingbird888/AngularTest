@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Numerics;
 using System.Reactive.Linq;
+using Vendor_Management_System.Models;
 
 namespace Vendor_Management_System.Controllers
 {
@@ -18,13 +19,28 @@ namespace Vendor_Management_System.Controllers
         }
 
         [HttpGet]
-        [Route("currencylist")]
-        public async Task<IActionResult> GetCurrencyList()
+        [Route("currencylist/{page}/{pageSize}")]
+        public async Task<IActionResult> GetCurrencyList(int page, int pageSize = 5)
         {
             try
             {
-                var currency = await _context.Currency.ToListAsync();
-                return Ok(currency);
+                var totalCurrencyCount = await _context.Currency.CountAsync();
+
+                var currency = await _context.Currency
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+                if (page > currency.Count)
+                {
+                    return NotFound("Page out of range.");
+                }
+                return Ok(new
+                {
+                    Currency = currency,
+                    TotalCount = totalCurrencyCount,
+                    CurrentPage = page,
+                    TotalPages = (int)Math.Ceiling((double)totalCurrencyCount / pageSize)
+                });
             }
             catch (Exception ex)
             {

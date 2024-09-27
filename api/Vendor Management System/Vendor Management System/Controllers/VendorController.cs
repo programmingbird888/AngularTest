@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using System.Reactive.Linq;
 using System;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+using Vendor_Management_System.Models;
+
 
 namespace Vendor_Management_System.Controllers
 {
@@ -17,11 +20,91 @@ namespace Vendor_Management_System.Controllers
         }
 
         [HttpGet]
+        [Route("vendor/lambda/{property}/{value}")]
+        public async Task<IActionResult> GetLambda(string property, string value)
+        {
+            if (string.IsNullOrEmpty(property) || string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentNullException("Property and value cannot be null or empty.");
+            }
+
+            var parameterExpression = Expression.Parameter(typeof(Vendor), "vendor");
+
+            var propertyInfo = typeof(Vendor).GetProperty(property);
+            if (propertyInfo == null)
+            {
+                return BadRequest($"Property '{property}' does not exist on type 'Vendor'.");
+            }
+
+            var propertyExpression = Expression.Property(parameterExpression, propertyInfo);
+
+            object convertedValue;
+            try
+            {
+                convertedValue = Convert.ChangeType(value, propertyInfo.PropertyType);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Could not convert value '{value}' to type '{propertyInfo.PropertyType}': {ex.Message}");
+            }
+
+            var constant = Expression.Constant(convertedValue, propertyInfo.PropertyType);
+            var equalityExpression = Expression.Equal(propertyExpression, constant);
+            var lambda = Expression.Lambda<Func<Vendor, bool>>(equalityExpression, parameterExpression);
+
+
+            var query = await _context.Vendor.Where(lambda).ToListAsync();
+
+            if (!query.Any())
+            {
+                return NotFound("No matching vendors found.");
+            }
+
+            return Ok(query);
+        }
+
+
+        //[HttpGet]
+        //[Route("vendor/lambda/{property}/{value}")]
+        //public async Task<IActionResult> GetLambda(string property, string value)
+        //{
+        //    if (string.IsNullOrEmpty(property) || string.IsNullOrEmpty(value))
+        //    {
+        //        throw new ArgumentNullException("Property and value cannot be null or empty.");
+        //    }
+
+        //    var parameterExpression = Expression.Parameter(typeof(Vendor), "vendor");
+
+        //    var propertyInfo = typeof(Vendor).GetProperty(property);
+        //    if (propertyInfo == null)
+        //    {
+        //        return BadRequest($"Property '{property}' does not exist on type 'Vendor'.");
+        //    }
+
+        //    var propertyExpression = Expression.Property(parameterExpression, property);
+        //    var constant = Expression.Constant(value);
+        //    var equalityExpression = Expression.Equal(propertyExpression, constant);
+
+        //    var lambda = Expression.Lambda<Func<Vendor, bool>>(equalityExpression, parameterExpression);
+
+        //    var query = await _context.Vendor.Where(lambda).ToListAsync();
+
+        //    if (!query.Any())
+        //    {
+        //        return NotFound("No matching vendors found.");
+        //    }
+
+        //    return Ok(query);
+        //}
+
+        [HttpGet]
         [Route("vendorlist/{page}/{pageSize}")]
         public async Task<IActionResult> GetVendorList(int page, int pageSize = 5)
         {
             try
             {
+
+
                 var totalCount = await _context.Vendor.CountAsync();
 
                 var vendors = await _context.Vendor

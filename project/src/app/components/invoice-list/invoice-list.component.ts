@@ -20,29 +20,50 @@ export class InvoiceListComponent implements OnInit {
   vendorId:number = 0
   currentPage: number = 1;
   pageSize: number = 5;
+  totalCount = 0;
+  totalPages = 0;
+
 
   constructor(private invoiceService: InvoiceService, private routes:Router, private vendorService: VendorService, private currencyService: CurrencyService) {}
 
   ngOnInit(): void {
     this.loadInvoices();
 
-    this.vendorService.getVendors(this.currentPage, this.pageSize).subscribe(data => {
-      this.vendor = data;
+    this.vendorService.getVendors(this.currentPage, this.pageSize).subscribe((data:any) => {
+      this.vendor = data.vendor;
     }, err => {
       alert(err.error);
     });
 
-    this.currencyService.getCurrencies().subscribe(data => {
-      this.currency = data;
+    this.currencyService.getCurrencies(this.currentPage, this.pageSize).subscribe((data:any) => {
+      this.currency = data.Currency;
     }, err => {
       alert(err);
     });
   }
 
-  loadInvoices(): void {
-    this.invoiceService.getInvoices(this.currencyId, this.vendorId).subscribe((get: Invoice[]) => {
-      this.invoices = get;
-    });
+loadInvoices(): void {
+  this.invoiceService.getInvoices(this.currencyId, this.vendorId, this.currentPage,this.pageSize).subscribe(
+    response => {
+      console.log(response)
+      if (response && response.invoice) {      
+        this.invoices = response.invoice;
+        this.totalCount = response.totalCount;
+        this.totalPages = response.totalPages;
+      }
+    }
+  );
+}
+
+  // loadInvoices(): void {
+  //   this.invoiceService.getInvoices(this.currencyId, this.vendorId, this.currentPage,this.pageSize).subscribe((get: Invoice[]) => {
+  //     this.invoices = get;
+  //   });
+  // }
+  
+  changePage(page: number): void {
+    this.currentPage = page;
+    this.loadInvoices();
   }
 
   deleteInvoice(invoiceId: number): void {
@@ -85,7 +106,7 @@ export class InvoiceListComponent implements OnInit {
   }
 
   OnFilter() {
-    this.invoiceService.getInvoices(this.vendorId, this.currencyId).subscribe((resp: Invoice[]) => {
+    this.invoiceService.getInvoices(this.vendorId, this.currencyId, this.currentPage,this.pageSize).subscribe((resp: Invoice[]) => {
       // console.log();
       this.invoices = resp;
     }, error => {
